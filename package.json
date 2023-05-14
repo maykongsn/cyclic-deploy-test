@@ -27,7 +27,6 @@
     "@nestjs/platform-express": "^8.0.0",
     "@prisma/client": "^4.5.0",
     "axios": "^1.1.2",
-    "prisma": "^4.5.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "rxjs": "^7.2.0"
@@ -47,6 +46,7 @@
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^3.4.0",
+    "prisma": "^4.5.0",
     "jest": "^27.0.6",
     "prettier": "^2.3.2",
     "supertest": "^6.1.3",
