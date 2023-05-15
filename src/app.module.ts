@@ -16,6 +16,6 @@ export class AppModule implements OnModuleInit {
   constructor(private prismaService: PrismaService) {}
 
   async onModuleInit() {
-      await this.prismaService.onModuleInit();
+    await this.prismaService.onModuleInit();
   }
 }

@@ -7,13 +7,22 @@ export class AppService {
   constructor(private api: HttpService, private prisma: PrismaService) {}
   async extractRefacts(username: string, url: string): Promise<any> {
     try {
-      const findRepo = await this.prisma.repo.findFirst({
-        where: { repoUrl: url },
-      });
+      // const findRepo = await this.prisma.repo.findFirst({
+      //   where: { repoUrl: url },
+      // });
+
+      const findRepo = {
+        id: '64604f4273f63d0f9d5cbe52',
+        repoId: '640279263',
+        repoUrl: 'https://github.com/maykongsn/JavaStud.git',
+        repoName: 'JavaStud',
+        active: true,
+        username: 'maykongsn'
+      }
 
       if (!findRepo)
         throw new HttpException('Repo not found', HttpStatus.BAD_REQUEST);
-
+        
       const response = await this.api.axiosRef.post(
         `${process.env.RM_API}/refact/all`,
         { name: findRepo.repoName, url, branch: 'master' },
