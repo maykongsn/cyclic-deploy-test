@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, OnModuleInit } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { HttpModule } from "@nestjs/axios";
@@ -12,4 +12,10 @@ import { WeightsModule } from './weights/weights.module';
   controllers: [AppController],
   providers: [AppService,PrismaService],
 })
-export class AppModule {}
+export class AppModule implements OnModuleInit {
+  constructor(private prismaService: PrismaService) {}
+
+  async onModuleInit() {
+      await this.prismaService.onModuleInit();
+  }
+}
